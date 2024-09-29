@@ -3,7 +3,6 @@ using namespace std;
 
 int main() {
     int t;  
-    cout << "Enter number of test cases: ";
     cin >> t;
 
     for (int i = 0; i < t; i++) {
@@ -11,18 +10,20 @@ int main() {
         cin >> N;
 
         if (N == 0) {
-            cout << "0";  
-        } else {
-            while (N > 0) {
-                cout << N % 10;  
-                N /= 10;         
-                if (N > 0) {
-                    cout << " "; 
-                }
-            }
+            cout << "0" << endl;  
+            continue; 
         }
-        
-        cout << endl;  
+
+        bool first_digit = true; 
+        while (N > 0) {
+            if (!first_digit) {
+                cout << " ";  
+            }
+            cout << N % 10;  
+            N /= 10;        
+            first_digit = false;
+        }
+        cout << endl; 
     }
 
     return 0;
