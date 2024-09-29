@@ -10,20 +10,19 @@ int main() {
         cin >> N;
 
         if (N == 0) {
-            cout << "0" << endl;  
-            continue; 
+            cout << "0" << endl;
+            continue;
         }
 
-        bool first_digit = true; 
+        cout << N % 10;
+        N /= 10;  
+
         while (N > 0) {
-            if (!first_digit) {
-                cout << " ";  
-            }
-            cout << N % 10;  
-            N /= 10;        
-            first_digit = false;
+            cout << " " << N % 10;  
+            N /= 10; 
         }
-        cout << endl; 
+
+        cout << endl;  
     }
 
     return 0;
