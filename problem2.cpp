@@ -10,18 +10,18 @@ int main() {
         int N;
         cin >> N;
 
-        while (N > 0) {
-            cout << N % 10;  
-            N /= 10;         
-            if (N > 0) {
-                cout << " "; 
+        if (N == 0) {
+            cout << "0";  
+        } else {
+            while (N > 0) {
+                cout << N % 10;  
+                N /= 10;         
+                if (N > 0) {
+                    cout << " "; 
+                }
             }
         }
         
-        if (N == 0 && i == t - 1) {
-            cout << " 0";
-        }
-
         cout << endl;  
     }
 
