@@ -2,24 +2,28 @@
 using namespace std;
 
 int main() {
-    int t, N;
-    cout << "Enter the number of test cases: ";
-    cin >> t;  
+    int t;  
+    cout << "Enter number of test cases: ";
+    cin >> t;
 
     for (int i = 0; i < t; i++) {
-        cin >> N;  
-        bool first = true; 
+        int N;
+        cin >> N;
 
         while (N > 0) {
-            if (!first) {
+            cout << N % 10;  
+            N /= 10;         
+            if (N > 0) {
                 cout << " "; 
             }
-            cout << N % 10; 
-            N /= 10;  
-            first = false; 
         }
-        cout << endl; 
+        
+        if (N == 0 && i == t - 1) {
+            cout << " 0";
+        }
+
+        cout << endl;  
     }
-    
+
     return 0;
 }
