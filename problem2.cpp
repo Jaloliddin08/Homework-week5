@@ -1,35 +1,19 @@
 #include <iostream>
 using namespace std;
-
-int main() {
-    int t;
-
-    cin >> t;
-    
-    while (t--) {
-        int N;
-       
-        cin >> N;
-        
-      
-        if (N == 0) {
-            cout << "0" << endl;
-            continue;
-        }
-        
-        bool firstDigit = true;
-       
-        while (N > 0) {
-            int digit = N % 10;  
-            if (!firstDigit) {
-                cout << " ";  
-            }
-            cout << digit;
-            firstDigit = false;
-            N /= 10;  
+int main()
+{
+    int  n;
+    cin>>n;
+    int number;
+    while (n>0){
+        cin >> number;
+        while (number > 0){
+          cout << number % 10 << " ";
+          number = number - number % 10;
+          number = number / 10;
         }
         cout << endl;
+        n--;
     }
-
     return 0;
 }
