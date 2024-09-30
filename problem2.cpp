@@ -2,27 +2,33 @@
 using namespace std;
 
 int main() {
-    int t;  
+    int t;
+
     cin >> t;
-
-    for (int i = 0; i < t; i++) {
+    
+    while (t--) {
         int N;
+       
         cin >> N;
-
+        
+      
         if (N == 0) {
             cout << "0" << endl;
             continue;
         }
-
-        cout << N % 10;
-        N /= 10;  
-
+        
+        bool firstDigit = true;
+       
         while (N > 0) {
-            cout << " " << N % 10;  
-            N /= 10; 
+            int digit = N % 10;  
+            if (!firstDigit) {
+                cout << " ";  
+            }
+            cout << digit;
+            firstDigit = false;
+            N /= 10;  
         }
-
-        cout << endl;  
+        cout << endl;
     }
 
     return 0;
